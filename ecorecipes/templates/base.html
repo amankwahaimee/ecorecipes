@@ -18,14 +18,6 @@
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">| Recipe Emissions Analyser |</span>
             <span class="navbar-brand">Carbon Dioxide: {{ total_ingredient_emissions_current }} </span>
-            <span class="navbar-brand">Diff: {{ total_ingredient_emissions_previous }} -
-                {{ total_ingredient_emissions_current }}</span>
-            <span class="navbar-brand">select:
-                {% for ing in selected_recipe.ingredients.all %}
-                {{ ing.name }} {{ ing.emissions}}
-                {% if not forloop.last %},
-                {% endif %}
-                {% endfor %} </span>
             <span class="navbar-brand">Nitrous Oxide: </span>
             <span class="navbar-brand">Particle Matter: </span>
             <span class="navbar-brand">Vitamin C: </span>
