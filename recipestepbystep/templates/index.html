@@ -1,0 +1,504 @@
+{% extends 'base.html' %}
+
+{% block selectrecipe %}
+
+<div class="card border mb-5">
+    <div class="card-body">
+        <h6 class="card-title"></h6>
+    </div>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="row" style="margin-left: 300px; margin-right: 50px;">
+        <div class="col-sm">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Recipe
+                </button>
+                <ul class="dropdown-menu">
+                    {% for recipe in recipe %}
+                    <li>
+                        <button type="submit" name="selected_recipe" value="{{ recipe.id }}" class="dropdown-item">
+                            {{ recipe.name }}
+                            <span class="{{ recipe.emissions_badge_class }}">
+                                {{ recipe.emissions_key }} emissions
+                            </span>
+                            <span class="{{ recipe.nutrition_badge_class }}">
+                                {{ recipe.nutritional_value_key }} nutrition
+                            </span>
+                        </button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm mb-3">
+            {% if selected_recipe%}
+            <div class="dropdown">
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Location
+                </button>
+
+                <ul class="dropdown-menu">
+                    {% for location in location %}
+                    <li>
+                        <button type="submit" name="selected_location" value="{{ location.id }}" class="dropdown-item">
+                            {{location.location_name }}
+                        </button>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <button class="btn btn-secondary" disabled>Location</button>
+                {% endif %}
+            </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm">
+            {% if selected_recipe%}
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Time Of Day
+                </button>
+
+                <ul class="dropdown-menu">
+                    {% for timeofday in timeofday %}
+                    <li>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <button type="submit" name="selected_timeofday" value="{{ timeofday.id }}"
+                                class="dropdown-item">
+                                {{ timeofday.time_of_day }}
+                            </button>
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <button class="btn btn-secondary" disabled>Time Of Day</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="card">
+    <div class="card-body text-center">
+        <div class="row">
+            <div class="col">
+                <h6 class="card-title">Chosen Recipe: {{ selected_recipe.name }}</h6>
+            </div>
+            <div class="col">
+                <h6 class="card-title">Chosen Location: {{ selected_location.location_name }}</h6>
+            </div>
+            <div class="col">
+                <h6 class="card-title">Chosen Time of day: {{ selected_timeofday.time_of_day }}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block results %}
+{% if selected_recipe or selected_location or selected_timeofday%}
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Recipe Step Analysis</h5>
+                <p class="card-text">
+                <div id="chart_container">
+                    <canvas id="chart_recipe"></canvas>
+                </div>
+                <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js "></script>
+                <script>
+                    const options_recipe = {
+                        animation: false,
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'tons',
+                                    font: {
+                                        size: 15,
+                                    }
+                                }
+                            }
+                        },
+                        elements: {
+                            line: {
+                                tension: 0.5
+                            }
+                        }
+                    }
+
+                    const data_recipe = {
+                        labels: ['step 1', 'step 2', 'step 3', 'step 4', 'step 5'],
+                        datasets: [{
+                            data: [100, 200, 300, 100, 50],
+                            label: 'Recipe Step Analysis CO2'
+                        },
+                        {
+                            data: [50, 150, 100, 100, 20],
+                            label: 'Recipe Step Analysis nutrition loss'
+
+                        }]
+                    }
+                    const ctx_recipe = document.querySelector('#chart_recipe');
+                    const myChart_recipe = new Chart(
+                        ctx_recipe,
+                        {
+                            type: 'bar',
+                            data: data_recipe,
+                            options: options_recipe
+                        }
+                    )
+                </script>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Cooking Method Analysis</h5>
+                <p class="card-text">
+                <div id="chart_container">
+                    <canvas id="chart_cookingmethods"></canvas>
+                </div>
+                <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js "></script>
+                <script>
+                    const data_cookingmethods = {
+                        labels: ['gas cooker', 'electric cooker', 'microwave', 'airfryer'],
+                        datasets: [{
+                            data: [2300, 230, 400, 600],
+                            label: 'Cooking Methods Comparison'
+                        }],
+
+                    }
+
+                    const options_cookingmethods = {
+                        animation: false,
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'tons',
+                                    font: {
+                                        size: 15,
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    const ctx_cookingmethods = document.querySelector('#chart_cookingmethods');
+                    const myChart_cookingmethods = new Chart(
+                        ctx_cookingmethods,
+                        {
+                            type: 'bar',
+                            data: data_cookingmethods,
+                            options: options_cookingmethods
+                        }
+                    )
+                </script>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Grid Analysis</h5>
+                <p class="card-text">
+                <div id="chart_container">
+                    <canvas id="chart_grid"></canvas>
+                </div>
+                <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js "></script>
+                <script>
+                    const data_grid = {
+                        labels: ['London & South East', 'North East', 'South West', 'Scotland', 'wales'],
+                        datasets: [{
+                            data: [200, 230, 400, 450, 250],
+                            label: 'Grid Comparison'
+                        }],
+
+                    }
+
+                    const options_grid = {
+                        animation: false,
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'tons',
+                                    font: {
+                                        size: 15,
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    const ctx_grid = document.querySelector('#chart_grid');
+                    const myChart_grid = new Chart(
+                        ctx_grid,
+                        {
+                            type: 'bar',
+                            data: data_grid,
+                            options: options_grid
+                        }
+                    )
+                </script>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Diet Option Analysis</h5>
+                <p class="card-text">
+                <div id="chart_container">
+                    <canvas id="my-chart"></canvas>
+                </div>
+                <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js "></script>
+                <script>
+                    const options = {
+                        animation: false,
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'tons',
+                                    font: {
+                                        size: 15,
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    const data = {
+                        labels: ['vegan', 'vegetarian', 'meditarrian diet', 'european diet', 'US diet'],
+                        datasets: [{
+                            data: [100, 300, 250, 1000, 3000],
+                            label: 'Diet Comparison'
+                        }],
+
+
+
+                    }
+                    const ctx = document.querySelector('#my-chart');
+                    const myChart = new Chart(
+                        ctx,
+                        {
+                            type: 'bar',
+                            data,
+                            options
+                        }
+                    )
+
+
+                </script>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}
+
+
+
+{% block ingredients %}
+{% if selected_recipe %}
+
+
+<div class="row">
+
+    <div class="col-3">
+        <div class="card">
+            <img src={{ selected_recipe.image_url }} class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <h5 class="card-title">{{ selected_recipe.name }}</h5>
+                <p class="card-text">
+                    <li class="list-group-item"> Cooking time: {{ selected_recipe.cooking_time_minutes }}
+                        minutes</li>
+                    <li class="list-group-item"> Serving Size: {{ selected_recipe.serving_size }}</li>
+                    <li class="list-group-item"> Food Tags: {{ selected_recipe.foodtags }} </li>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Ingredients</h5>
+                <p class="card-text">
+                <ul>
+                    {% for ingredient in current_ingredients %}
+                    <li>
+                        <p>{{ ingredient.name }}
+                            <span class="{{ ingredient.emissions_badge_class }}">
+                                {{ ingredient.emissions_key }} emissions
+                            </span>
+                            <span class="{{ ingredient.nutrition_badge_class }}">
+                                {{ ingredient.nutritional_value_key }} nutrition
+                            </span>
+                        </p>
+                    </li>
+                    {% empty %}
+                    <li>No ingredients found for this recipe.</li>
+                    {% endfor %}
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Recommendation</h5>
+                <p class="card-text">
+                <ul>
+                    {% for ingredient in current_ingredients %}
+                    {% if ingredient.substitutes.all %}
+                    <li>
+                        <div class="mt-2 mb-3">
+                            {% for substitute in ingredient.substitutes.all %}
+
+                            <form method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="hidden" name="replaced_ingredient_id" value="{{ ingredient.id }}">
+                                <input type="hidden" name="replacing_ingredient_id" value="{{ substitute.id }}">
+
+                                <button type="submit" class="btn btn-outline-secondary btn-sm"> change
+                                </button>
+                            </form>
+
+                            <strong>{{ ingredient.name }}</strong> to <strong>{{ substitute.name }}</strong>
+                            <span class="{{ substitute.emissions_badge_class }}">
+                                {{ substitute.emissions_key }} emissions
+                            </span>
+                            <span class="{{ substitute.nutrition_badge_class }}">
+                                {{ substitute.nutritional_value_key }} nutrition
+                            </span>
+
+                            {% endfor %}
+
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endif %}
+{% endblock %}
+
+
+{% block steps %}
+{% if selected_recipe %}
+
+<div class="card">
+    <div class="card-header">
+        <h5>{{ selected_recipe.name }} Recipe</h5>
+    </div>
+
+    {% if recipe_steps %}
+
+    <ul class="list-group list-group-flush">
+        {% for step in recipe_steps %}
+        <li class="list-group-item">
+            <h6>
+                Step {{ step.order }}
+                <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#{{ step.id }}" aria-controls=" staticBackdrop">
+                    make changes
+                </button>
+                {% if step.ventilation %}
+                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-title="Recommended NO2 levels exeeded. Increase ventilation by opening windows.">
+                    Ventilation
+                </button>
+                {% endif %}
+            </h6>
+            {{ step.content }}
+        </li>
+
+        <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="{{ step.id }}"
+            aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="staticBackdropLabel">Customisation for Step {{ step.order }} </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+
+                    <a href="#" class="btn btn-secondary mb-2 ">Remove step</a>
+                    <a href="#" class="btn btn-secondary mb-2 ">Substitute Ingredient</a>
+                    <a href="#" class="btn btn-secondary">Substitute Cooking Appliance</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+
+{% endif %}
+{% endblock %}
+
+
+{% block conclusion %}
+{% if selected_recipe %}
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">You Reduced Your Emissions By: {{ percent_emissions_reduced|floatformat:1}}%!</h4>
+    <p>These are the actions you took to reduce them:
+        {% for old, new, percent in ingredient_percent_change %}
+        <li>
+            <strong>used {{ new }} instead of {{ old }} (-{{percent|floatformat:1}}%)</strong>
+        </li>
+        {% endfor %}
+    </p>
+
+</div>
+{% endif %}
+
+
+{% endblock %}
+
+{% block tidbits %}
+<h5>Insights&Benefits</h5>
+<div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Environmental Impact</div>
+    <div class="card-body">
+        <p class="card-text">Electric cooking reduces CO₂ emissions by 77.7% on average compared to gas cooking,
+            with significant variations based on regional energy mix.</p>
+    </div>
+</div>
+
+{% endblock %}
