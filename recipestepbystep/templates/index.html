@@ -37,7 +37,6 @@
         </div>
 
         <div class="col-sm mb-3">
-            {% if selected_recipe%}
             <div class="dropdown">
 
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -54,9 +53,6 @@
                     </li>
                     {% endfor %}
                 </ul>
-                {% else %}
-                <button class="btn btn-secondary" disabled>Location</button>
-                {% endif %}
             </div>
         </div>
 
@@ -65,7 +61,6 @@
 
 
         <div class="col-sm">
-            {% if selected_recipe%}
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -85,9 +80,6 @@
                     </li>
                     {% endfor %}
                 </ul>
-                {% else %}
-                <button class="btn btn-secondary" disabled>Time Of Day</button>
-                {% endif %}
             </div>
         </div>
     </div>
