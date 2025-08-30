@@ -10,3 +10,15 @@ python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
 python manage.py migrate
+
+python manage.py shell -c "
+from django.contrib.auth import get_user_model;
+import os;
+User = get_user_model();
+if not User.objects.filter(username=os.environ.get('DJANGO_SUPERUSER_USERNAME', 'admin')).exists():
+    User.objects.create_superuser(
+        username=os.environ.get('DJANGO_SUPERUSER_USERNAME', 'admin'),
+        email=os.environ.get('DJANGO_SUPERUSER_EMAIL', 'admin@example.com'),
+        password=os.environ.get('DJANGO_SUPERUSER_PASSWORD', 'password')
+    )
+"
