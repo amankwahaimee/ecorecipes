@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='cookingmethod',
             name='CO2',
-            field=models.IntegerField(default='?'),
+            field=models.IntegerField(default=0),
         ),
     ]
