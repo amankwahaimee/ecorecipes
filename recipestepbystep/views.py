@@ -144,9 +144,9 @@ def index(request):
             percent_emissions_reduced = 0
 
     return render(request, 'index.html', {
-        'recipe': recipes,
-        'location': locations,
-        'timeofday': timeofdays,
+        'recipes': recipes,
+        'locations': locations,
+        'timeofdays': timeofdays,
         'selected_recipe': selected_recipe,
         'selected_timeofday': selected_timeofday,
         'selected_location': selected_location,

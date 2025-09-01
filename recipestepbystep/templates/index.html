@@ -19,7 +19,7 @@
                     Recipe
                 </button>
                 <ul class="dropdown-menu">
-                    {% for recipe in recipe %}
+                    {% for recipe in recipes %}
                     <li>
                         <button type="submit" name="selected_recipe" value="{{ recipe.id }}" class="dropdown-item">
                             {{ recipe.name }}
@@ -45,7 +45,7 @@
                 </button>
 
                 <ul class="dropdown-menu">
-                    {% for location in location %}
+                    {% for location in locations %}
                     <li>
                         <button type="submit" name="selected_location" value="{{ location.id }}" class="dropdown-item">
                             {{location.location_name }}
@@ -68,7 +68,7 @@
                 </button>
 
                 <ul class="dropdown-menu">
-                    {% for timeofday in timeofday %}
+                    {% for timeofday in timeofdays %}
                     <li>
                         <form method="POST">
                             {% csrf_token %}
