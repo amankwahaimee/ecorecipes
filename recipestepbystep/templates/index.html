@@ -70,13 +70,12 @@
                 <ul class="dropdown-menu">
                     {% for timeofday in timeofdays %}
                     <li>
-                        <form method="POST">
-                            {% csrf_token %}
+                        
                             <button type="submit" name="selected_timeofday" value="{{ timeofday.id }}"
                                 class="dropdown-item">
                                 {{ timeofday.time_of_day }}
                             </button>
-                        </form>
+                  
                     </li>
                     {% endfor %}
                 </ul>
