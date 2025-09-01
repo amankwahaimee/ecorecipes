@@ -70,12 +70,12 @@
                 <ul class="dropdown-menu">
                     {% for timeofday in timeofdays %}
                     <li>
-                        
-                            <button type="submit" name="selected_timeofday" value="{{ timeofday.id }}"
-                                class="dropdown-item">
-                                {{ timeofday.time_of_day }}
-                            </button>
-                  
+
+                        <button type="submit" name="selected_timeofday" value="{{ timeofday.id }}"
+                            class="dropdown-item">
+                            {{ timeofday.time_of_day }}
+                        </button>
+
                     </li>
                     {% endfor %}
                 </ul>
@@ -471,7 +471,7 @@
     <p>These are the actions you took to reduce them:
         {% for old, new, percent in ingredient_percent_change %}
         <li>
-            <strong>used {{ new }} instead of {{ old }} (-{{percent|floatformat:1}}%)</strong>
+            <strong>used {{ new }} instead of {{ old }}</strong>
         </li>
         {% endfor %}
     </p>

@@ -50,10 +50,16 @@ def index(request):
         location_id = request.POST.get('selected_location')
         timeofday_id = request.POST.get('selected_timeofday')
 
-        # remember user selections even if page is refreshed
+        # what happens if new recipe is picked
         if recipe_id:
             request.session['selected_recipe_id'] = recipe_id
             request.session['ingredient_replacements'] = {}
+            ingredient_replacements_dictionary = {}
+            total_ingredient_emissions_current = 0
+            total_ingredient_emissions_previous = 0
+            current_ingredients = []
+            changes = []
+            ingredient_percent_change = []
 
         if location_id:
             request.session['selected_location_id'] = location_id
@@ -133,7 +139,7 @@ def index(request):
             except (ValueError, TypeError):
                 continue
     else:
-        total_ingredient_emissions_current = 0
+        total_ingredient_emissions_current = total_ingredient_emissions_previous
 
     # if user makes all 3 drop drown slections, then calculate percentage
     if selected_recipe and selected_location and selected_timeofday:
