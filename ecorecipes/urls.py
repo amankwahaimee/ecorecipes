@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipestepbystep/', include("recipestepbystep.urls")),
     path('admin_tools_stats/', include('admin_tools_stats.urls')),
-    path('', TemplateView.as_view(template_name='index.html'), name='home'),
+    # path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path('', include("recipestepbystep.urls")),
 ]
