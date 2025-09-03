@@ -102,6 +102,7 @@ def index(request):
         recipe_steps = []
         current_ingredients = []
 
+    # to display substitutions made
     for i, ingredient in enumerate(current_ingredients):
         replaced_id = ingredient_replacements_dictionary.get(
             str(ingredient.id))
