@@ -1,421 +1,273 @@
 [
 {
-  "model": "recipestepbystep.recipe",
+  "model": "recipestepbystep.timeofday",
   "pk": 1,
   "fields": {
-    "name": "Fish And Chips",
-    "cooking_time_minutes": 15.0,
-    "cooking_method": "frying",
-    "serving_size": 2,
-    "image_url": "https://storage.needpix.com/rsynced_images/food-3687804_1280.jpg",
-    "foodtags": "vegetarian",
-    "emissions_key": "low",
-    "nutritional_value_key": "low",
-    "ingredients": [
-      10,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17
-    ]
+    "time_of_day": "00:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.recipe",
+  "model": "recipestepbystep.timeofday",
   "pk": 2,
   "fields": {
-    "name": "English Breakfast",
-    "cooking_time_minutes": 30.0,
-    "cooking_method": "---",
-    "serving_size": 1,
-    "image_url": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/stressfreefullenglis_67721_16x9.jpg",
-    "foodtags": "Dairy-free, Nut-free, Pregnancy-friendly",
-    "emissions_key": "low",
-    "nutritional_value_key": "high",
-    "ingredients": [
-      2,
-      4,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23
-    ]
+    "time_of_day": "01:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
-  "pk": 1,
-  "fields": {
-    "name": "beef",
-    "nutritional_value_key": "high",
-    "nutritional_value": 56.0,
-    "emissions_key": "high",
-    "emissions": 150.0,
-    "substitutes": [
-      1,
-      2
-    ]
-  }
-},
-{
-  "model": "recipestepbystep.ingredient",
-  "pk": 2,
-  "fields": {
-    "name": "flat mushroom",
-    "nutritional_value_key": "high",
-    "nutritional_value": 50.0,
-    "emissions_key": "low",
-    "emissions": 35.0,
-    "substitutes": []
-  }
-},
-{
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 3,
   "fields": {
-    "name": "white bread slice",
-    "nutritional_value_key": "low",
-    "nutritional_value": 5.0,
-    "emissions_key": "medium",
-    "emissions": 50.0,
-    "substitutes": [
-      3
-    ]
+    "time_of_day": "02:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 4,
   "fields": {
-    "name": "sausage",
-    "nutritional_value_key": "high",
-    "nutritional_value": 10.0,
-    "emissions_key": "high",
-    "emissions": 50.0,
-    "substitutes": [
-      1
-    ]
+    "time_of_day": "03:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 5,
   "fields": {
-    "name": "fish",
-    "nutritional_value_key": "high",
-    "nutritional_value": 65.0,
-    "emissions_key": "medium",
-    "emissions": 42.0,
-    "substitutes": [
-      2
-    ]
+    "time_of_day": "04:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 6,
   "fields": {
-    "name": "chips",
-    "nutritional_value_key": "low",
-    "nutritional_value": 11.0,
-    "emissions_key": "medium",
-    "emissions": 40.0,
-    "substitutes": []
+    "time_of_day": "05:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 7,
   "fields": {
-    "name": "vegetable oil",
-    "nutritional_value_key": "none",
-    "nutritional_value": 0.0,
-    "emissions_key": "none",
-    "emissions": 20.0,
-    "substitutes": [
-      4
-    ]
+    "time_of_day": "06:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 8,
   "fields": {
-    "name": "flour",
-    "nutritional_value_key": "none",
-    "nutritional_value": 0.0,
-    "emissions_key": "none",
-    "emissions": 0.0,
-    "substitutes": []
+    "time_of_day": "07:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 9,
   "fields": {
-    "name": "baking powder",
-    "nutritional_value_key": "none",
-    "nutritional_value": 0.0,
-    "emissions_key": "none",
-    "emissions": 0.0,
-    "substitutes": []
+    "time_of_day": "08:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 10,
   "fields": {
-    "name": "potato",
-    "nutritional_value_key": "medium",
-    "nutritional_value": 6.0,
-    "emissions_key": "low",
-    "emissions": 15.0,
-    "substitutes": []
+    "time_of_day": "09:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 11,
   "fields": {
-    "name": "milk",
-    "nutritional_value_key": "none",
-    "nutritional_value": 0.0,
-    "emissions_key": "none",
-    "emissions": 0.0,
-    "substitutes": []
+    "time_of_day": "10:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 12,
   "fields": {
-    "name": "beef dripping",
-    "nutritional_value_key": "low",
-    "nutritional_value": 3.0,
-    "emissions_key": "high",
-    "emissions": 60.0,
-    "substitutes": [
-      4
-    ]
+    "time_of_day": "11:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 13,
   "fields": {
-    "name": "cod",
-    "nutritional_value_key": "medium",
-    "nutritional_value": 4.0,
-    "emissions_key": "medium",
-    "emissions": 3.0,
-    "substitutes": [
-      6
-    ]
+    "time_of_day": "12:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 14,
   "fields": {
-    "name": "self raising flour",
-    "nutritional_value_key": "low",
-    "nutritional_value": 4.0,
-    "emissions_key": "low",
-    "emissions": 5.0,
-    "substitutes": []
+    "time_of_day": "13:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 15,
   "fields": {
-    "name": "salt",
-    "nutritional_value_key": "none",
-    "nutritional_value": 0.0,
-    "emissions_key": "none",
-    "emissions": 0.0,
-    "substitutes": []
+    "time_of_day": "14:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 16,
   "fields": {
-    "name": "black pepper",
-    "nutritional_value_key": "none",
-    "nutritional_value": 0.0,
-    "emissions_key": "none",
-    "emissions": 0.0,
-    "substitutes": []
+    "time_of_day": "15:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 17,
   "fields": {
-    "name": "lager",
-    "nutritional_value_key": "none",
-    "nutritional_value": 0.0,
-    "emissions_key": "none",
-    "emissions": 15.0,
-    "substitutes": []
+    "time_of_day": "16:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 18,
   "fields": {
-    "name": "bacon",
-    "nutritional_value_key": "medium",
-    "nutritional_value": 0.0,
-    "emissions_key": "high",
-    "emissions": 42.0,
-    "substitutes": [
-      7
-    ]
+    "time_of_day": "17:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 19,
   "fields": {
-    "name": "egg",
-    "nutritional_value_key": "high",
-    "nutritional_value": 0.0,
-    "emissions_key": "medium",
-    "emissions": 7.0,
-    "substitutes": []
+    "time_of_day": "18:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 20,
   "fields": {
-    "name": "tomato",
-    "nutritional_value_key": "high",
-    "nutritional_value": 0.0,
-    "emissions_key": "low",
-    "emissions": 5.0,
-    "substitutes": []
+    "time_of_day": "19:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 21,
   "fields": {
-    "name": "white bread",
-    "nutritional_value_key": "low",
-    "nutritional_value": 0.0,
-    "emissions_key": "medium",
-    "emissions": 25.0,
-    "substitutes": [
-      3
-    ]
+    "time_of_day": "20:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 22,
   "fields": {
-    "name": "black pudding",
-    "nutritional_value_key": "medium",
-    "nutritional_value": 0.0,
-    "emissions_key": "low",
-    "emissions": 16.0,
-    "substitutes": []
+    "time_of_day": "21:00",
+    "emission_multiplier": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredient",
+  "model": "recipestepbystep.timeofday",
   "pk": 23,
   "fields": {
-    "name": "olive oil",
-    "nutritional_value_key": "high",
-    "nutritional_value": 0.0,
-    "emissions_key": "medium",
-    "emissions": 10.0,
-    "substitutes": []
+    "time_of_day": "22:00",
+    "emission_multiplier": 2.0
   }
 },
 {
-  "model": "recipestepbystep.ingredientsubstitute",
+  "model": "recipestepbystep.timeofday",
+  "pk": 24,
+  "fields": {
+    "time_of_day": "23:00",
+    "emission_multiplier": 6.0
+  }
+},
+{
+  "model": "recipestepbystep.location",
   "pk": 1,
   "fields": {
-    "name": "soybean",
-    "nutritional_value_key": "high",
-    "nutritional_value": 6.0,
-    "emissions_key": "low",
-    "emissions": 16.0
+    "location_name": "London & South East England",
+    "location_emission_factor": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredientsubstitute",
+  "model": "recipestepbystep.location",
   "pk": 2,
   "fields": {
-    "name": "chicken",
-    "nutritional_value_key": "high",
-    "nutritional_value": 1.0,
-    "emissions_key": "medium",
-    "emissions": 20.0
+    "location_name": "North East England",
+    "location_emission_factor": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredientsubstitute",
+  "model": "recipestepbystep.location",
   "pk": 3,
   "fields": {
-    "name": "brown bread",
-    "nutritional_value_key": "high",
-    "nutritional_value": 0.0,
-    "emissions_key": "low",
-    "emissions": 9.0
+    "location_name": "South West England",
+    "location_emission_factor": 0.0
   }
 },
 {
-  "model": "recipestepbystep.ingredientsubstitute",
+  "model": "recipestepbystep.location",
   "pk": 4,
   "fields": {
-    "name": "sunflower oil",
-    "nutritional_value_key": "medium",
-    "nutritional_value": 0.0,
-    "emissions_key": "medium",
-    "emissions": 15.0
+    "location_name": "Scotland",
+    "location_emission_factor": 2.0
   }
 },
 {
-  "model": "recipestepbystep.ingredientsubstitute",
+  "model": "recipestepbystep.location",
   "pk": 5,
   "fields": {
-    "name": "vegetable oil",
-    "nutritional_value_key": "high",
-    "nutritional_value": 4.0,
-    "emissions_key": "high",
-    "emissions": 20.0
+    "location_name": "Wales",
+    "location_emission_factor": 5.0
   }
 },
 {
-  "model": "recipestepbystep.ingredientsubstitute",
-  "pk": 6,
+  "model": "recipestepbystep.recipestep",
+  "pk": 1,
   "fields": {
-    "name": "haddock",
-    "nutritional_value_key": "medium",
-    "nutritional_value": 4.0,
-    "emissions_key": "medium",
-    "emissions": 2.0
+    "recipe": 1,
+    "order": 2,
+    "content": "cook chips",
+    "cooking_appliance": null,
+    "cooking_method": 2,
+    "nutrients": null,
+    "ventilation": 1
   }
 },
 {
-  "model": "recipestepbystep.ingredientsubstitute",
-  "pk": 7,
+  "model": "recipestepbystep.recipestep",
+  "pk": 2,
   "fields": {
-    "name": "Tofu",
-    "nutritional_value_key": "high",
-    "nutritional_value": 0.0,
-    "emissions_key": "low",
-    "emissions": 7.0
+    "recipe": 1,
+    "order": 1,
+    "content": "cook fish",
+    "cooking_appliance": null,
+    "cooking_method": null,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 3,
+  "fields": {
+    "recipe": 2,
+    "order": 1,
+    "content": "step 1 will be here",
+    "cooking_appliance": null,
+    "cooking_method": null,
+    "nutrients": null,
+    "ventilation": 0
   }
 }
 ]
