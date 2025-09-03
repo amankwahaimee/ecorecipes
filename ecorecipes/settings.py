@@ -92,12 +92,8 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
-database_url = os.environ.get("DATABASE_URL")
-if database_url:
-    DATABASES["default"] = dj_database_url.parse(database_url)
-
-# DATABASES["default"] = dj_database_url.parse("postgresql://ecorecipesdatabase_user:Tulhr4xALW4OuomUMk9SXJqkKaC1b6P5@dpg-d2n5pjp5pdvs73cj8pd0-a.frankfurt-postgres.render.com/ecorecipesdatabase")
+DATABASES["default"] = dj_database_url.parse(
+    "postgresql://ecorecipesdatabase_user:Tulhr4xALW4OuomUMk9SXJqkKaC1b6P5@dpg-d2n5pjp5pdvs73cj8pd0-a.frankfurt-postgres.render.com/ecorecipesdatabase")
 
 
 # Password validation

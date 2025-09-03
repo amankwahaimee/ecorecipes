@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "time_of_day": "00:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 4.0
   }
 },
 {
@@ -12,7 +12,7 @@
   "pk": 2,
   "fields": {
     "time_of_day": "01:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 3.0
   }
 },
 {
@@ -20,7 +20,7 @@
   "pk": 3,
   "fields": {
     "time_of_day": "02:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 2.0
   }
 },
 {
@@ -28,7 +28,7 @@
   "pk": 4,
   "fields": {
     "time_of_day": "03:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 1.0
   }
 },
 {
@@ -36,7 +36,7 @@
   "pk": 5,
   "fields": {
     "time_of_day": "04:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 6.0
   }
 },
 {
@@ -44,7 +44,7 @@
   "pk": 6,
   "fields": {
     "time_of_day": "05:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 3.0
   }
 },
 {
@@ -52,7 +52,7 @@
   "pk": 7,
   "fields": {
     "time_of_day": "06:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 8.0
   }
 },
 {
@@ -60,7 +60,7 @@
   "pk": 8,
   "fields": {
     "time_of_day": "07:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 9.0
   }
 },
 {
@@ -68,7 +68,7 @@
   "pk": 9,
   "fields": {
     "time_of_day": "08:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 2.0
   }
 },
 {
@@ -76,7 +76,7 @@
   "pk": 10,
   "fields": {
     "time_of_day": "09:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 3.0
   }
 },
 {
@@ -84,7 +84,7 @@
   "pk": 11,
   "fields": {
     "time_of_day": "10:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 5.0
   }
 },
 {
@@ -92,7 +92,7 @@
   "pk": 12,
   "fields": {
     "time_of_day": "11:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 4.0
   }
 },
 {
@@ -100,7 +100,7 @@
   "pk": 13,
   "fields": {
     "time_of_day": "12:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 2.0
   }
 },
 {
@@ -108,7 +108,7 @@
   "pk": 14,
   "fields": {
     "time_of_day": "13:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 7.0
   }
 },
 {
@@ -116,7 +116,7 @@
   "pk": 15,
   "fields": {
     "time_of_day": "14:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 8.0
   }
 },
 {
@@ -124,7 +124,7 @@
   "pk": 16,
   "fields": {
     "time_of_day": "15:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 9.0
   }
 },
 {
@@ -132,7 +132,7 @@
   "pk": 17,
   "fields": {
     "time_of_day": "16:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 5.0
   }
 },
 {
@@ -140,7 +140,7 @@
   "pk": 18,
   "fields": {
     "time_of_day": "17:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 4.0
   }
 },
 {
@@ -148,7 +148,7 @@
   "pk": 19,
   "fields": {
     "time_of_day": "18:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 3.0
   }
 },
 {
@@ -156,7 +156,7 @@
   "pk": 20,
   "fields": {
     "time_of_day": "19:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 1.0
   }
 },
 {
@@ -164,7 +164,7 @@
   "pk": 21,
   "fields": {
     "time_of_day": "20:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 7.0
   }
 },
 {
@@ -172,7 +172,7 @@
   "pk": 22,
   "fields": {
     "time_of_day": "21:00",
-    "emission_multiplier": 0.0
+    "emission_multiplier": 2.0
   }
 },
 {
@@ -196,7 +196,7 @@
   "pk": 1,
   "fields": {
     "location_name": "London & South East England",
-    "location_emission_factor": 0.0
+    "location_emission_factor": 3.0
   }
 },
 {
@@ -204,7 +204,7 @@
   "pk": 2,
   "fields": {
     "location_name": "North East England",
-    "location_emission_factor": 0.0
+    "location_emission_factor": 6.0
   }
 },
 {
@@ -212,7 +212,7 @@
   "pk": 3,
   "fields": {
     "location_name": "South West England",
-    "location_emission_factor": 0.0
+    "location_emission_factor": 5.0
   }
 },
 {
@@ -268,6 +268,202 @@
     "cooking_method": null,
     "nutrients": null,
     "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 4,
+  "fields": {
+    "recipe": 1,
+    "order": 3,
+    "content": "Increase the heat of the fryer to 180C/350F.",
+    "cooking_appliance": 5,
+    "cooking_method": null,
+    "nutrients": null,
+    "ventilation": 1
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 5,
+  "fields": {
+    "recipe": 1,
+    "order": 4,
+    "content": "Season the fish and dust lightly with flour; this enables the batter to stick to the fish.",
+    "cooking_appliance": null,
+    "cooking_method": null,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 6,
+  "fields": {
+    "recipe": 1,
+    "order": 5,
+    "content": "To make the batter, sift the flour and a pinch of salt into a large bowl and whisk in the lager to give a thick batter, adding a little extra beer if it seems over-thick. It should be the consistency of very thick double cream and should coat the back of a wooden spoon. Season with salt and thickly coat 2 of the fillets with the batter. Carefully place in the hot fat and cook for 8-10 minutes until golden and crispy. Remove from the pan, drain and sit on a baking sheet lined with greaseproof paper, then keep warm in the oven while you cook the remaining 2 fillets in the same way.",
+    "cooking_appliance": null,
+    "cooking_method": null,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 7,
+  "fields": {
+    "recipe": 1,
+    "order": 6,
+    "content": "Once the fish is cooked, return the chips to the fryer and cook for 2-3 minutes or until golden and crispy. Shake off any excess fat and season with salt before serving with the crispy fish. If liked, you can serve with tinned mushy peas and bread and butter, for the authentic experience!",
+    "cooking_appliance": 5,
+    "cooking_method": 2,
+    "nutrients": null,
+    "ventilation": 1
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 8,
+  "fields": {
+    "recipe": 2,
+    "order": 2,
+    "content": "Cook the sausages first. Add the sausages to the hot grill plate/the coolest part if there is one and allow to cook slowly for about 15-20 minutes, turning occasionally, until golden. After the first 10 minutes, increase the heat to medium before beginning to cook the other ingredients. If you are struggling for space, completely cook the sausages and keep hot on a plate in the oven.",
+    "cooking_appliance": null,
+    "cooking_method": 3,
+    "nutrients": null,
+    "ventilation": 1
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 9,
+  "fields": {
+    "recipe": 2,
+    "order": 3,
+    "content": "Snip a few small cuts into the fatty edge of the bacon. Place the bacon straight on to the grill plate and fry for 2-4 minutes each side or until your preferred crispiness is reached. Like the sausages, the cooked bacon can be kept hot on a plate in the oven.",
+    "cooking_appliance": null,
+    "cooking_method": 2,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 10,
+  "fields": {
+    "recipe": 2,
+    "order": 4,
+    "content": "For the mushrooms, brush away any dirt using a pastry brush and trim the stalk level with the mushroom top. Season with salt and pepper and drizzle over a little olive oil. Place stalk-side up on the grill plate and cook for 1-2 minutes before turning and cooking for a further 3-4 minutes. Avoid moving the mushrooms too much while cooking, as this releases the natural juices, making them soggy.",
+    "cooking_appliance": null,
+    "cooking_method": 3,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 11,
+  "fields": {
+    "recipe": 2,
+    "order": 5,
+    "content": "For the tomatoes, cut the tomatoes across the centre/or in half lengthways if using plum tomatoes , and with a small, sharp knife remove the green 'eye'. Season with salt and pepper and drizzle with a little olive oil. Place cut-side down on the grill plate and cook without moving for 2 minutes. Gently turn over and season again. Cook for a further 2-3 minutes until tender but still holding their shape.",
+    "cooking_appliance": null,
+    "cooking_method": 3,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 12,
+  "fields": {
+    "recipe": 2,
+    "order": 6,
+    "content": "For the black pudding, cut the black pudding into 3-4 slices and remove the skin. Place on the grill plate and cook for 1¾-2 minutes each side until slightly crispy.",
+    "cooking_appliance": null,
+    "cooking_method": 3,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 13,
+  "fields": {
+    "recipe": 2,
+    "order": 7,
+    "content": "For 'proper' fried bread it's best to cook it in a separate pan. Ideally, use bread that is a couple of days old. Heat a frying pan to a medium heat and cover the base with oil. Add the bread and cook for 2-3 minutes each side until crispy and golden. If the pan becomes too dry, add a little more oil. For a richer flavour, add a knob of butter after you turn the slice.",
+    "cooking_appliance": null,
+    "cooking_method": 2,
+    "nutrients": null,
+    "ventilation": 1
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 14,
+  "fields": {
+    "recipe": 2,
+    "order": 8,
+    "content": "For the fried eggs, break the egg straight into the pan with the fried bread and leave for 30 seconds. Add a good knob of butter and lightly splash/baste the egg with the butter when melted. Cook to your preferred stage, season and gently remove with a fish slice.",
+    "cooking_appliance": null,
+    "cooking_method": 2,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.recipestep",
+  "pk": 15,
+  "fields": {
+    "recipe": 2,
+    "order": 9,
+    "content": "Once all the ingredients are cooked, serve on warm plates and enjoy straight away with a good squeeze of tomato ketchup or brown sauce.",
+    "cooking_appliance": null,
+    "cooking_method": null,
+    "nutrients": null,
+    "ventilation": 0
+  }
+},
+{
+  "model": "recipestepbystep.cookingappliance",
+  "pk": 1,
+  "fields": {
+    "name": "gas cooker",
+    "CO2": 3200.0
+  }
+},
+{
+  "model": "recipestepbystep.cookingappliance",
+  "pk": 2,
+  "fields": {
+    "name": "electric cooker",
+    "CO2": 230.0
+  }
+},
+{
+  "model": "recipestepbystep.cookingappliance",
+  "pk": 3,
+  "fields": {
+    "name": "gas oven",
+    "CO2": 5.0
+  }
+},
+{
+  "model": "recipestepbystep.cookingappliance",
+  "pk": 4,
+  "fields": {
+    "name": "electric oven",
+    "CO2": 5.0
+  }
+},
+{
+  "model": "recipestepbystep.cookingappliance",
+  "pk": 5,
+  "fields": {
+    "name": "electric fryer",
+    "CO2": 7.0
   }
 }
 ]
