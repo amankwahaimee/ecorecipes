@@ -1,1 +1,0 @@
-web gunicorn ecorecipes.wsgi:application --log-file - 
