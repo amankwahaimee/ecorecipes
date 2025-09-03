@@ -87,15 +87,37 @@
 <div class="card">
     <div class="card-body text-center">
         <div class="row">
+
+            {% if not selected_recipe %}
+            <div class="col">
+                <h6 class="card-title">Chosen Recipe: <strong>please make a selction</strong> </h6>
+            </div>
+            {% else %}
             <div class="col">
                 <h6 class="card-title">Chosen Recipe: {{ selected_recipe.name }}</h6>
             </div>
+            {% endif %}
+
+            {% if not selected_location %}
+            <div class="col">
+                <h6 class="card-title">Chosen Location: <strong>please make a selction</strong> </h6>
+            </div>
+            {% else %}
             <div class="col">
                 <h6 class="card-title">Chosen Location: {{ selected_location.location_name }}</h6>
             </div>
+            {% endif %}
+
+            {% if not selected_timeofday %}
+            <div class="col">
+                <h6 class="card-title">Chosen Time Of Day: <strong>please make a selction</strong> </h6>
+            </div>
+            {% else %}
             <div class="col">
                 <h6 class="card-title">Chosen Time of day: {{ selected_timeofday.time_of_day }}</h6>
             </div>
+            {% endif %}
+
         </div>
     </div>
 </div>
@@ -378,7 +400,6 @@
                                 {% csrf_token %}
                                 <input type="hidden" name="replaced_ingredient_id" value="{{ ingredient.id }}">
                                 <input type="hidden" name="replacing_ingredient_id" value="{{ substitute.id }}">
-
                                 <button type="submit" class="btn btn-outline-secondary btn-sm"> change
                                 </button>
                             </form>
@@ -390,7 +411,6 @@
                             <span class="{{ substitute.nutrition_badge_class }}">
                                 {{ substitute.nutritional_value_key }} nutrition
                             </span>
-
                             {% endfor %}
 
                         </div>
